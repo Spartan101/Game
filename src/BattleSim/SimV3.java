@@ -18,18 +18,21 @@ import java.util.ArrayList;
  * @author Jason
  */
 public class SimV3 extends javax.swing.JFrame {
-private Player spartan101;
-private ArrayList<Enemy> enemies;
+//private Player spartan101;
+//private ArrayList<Enemy> enemies;
+  private ArrayList<Base> entities;
 
     /** Creates new form RunSim */
     public SimV3() {
-        spartan101 = new Player(10,12,10,4,9,5,9,5,1,2);
+        //spartan101 = new Player(10,12,10,4,9,5,9,5,1,2);
+
+        //Creates Array and populates
+        entities = new ArrayList<Base>();
+        entities.add(new Player(10,12,10,4,9,5,9,5,1,2));
         JOptionPane.showMessageDialog(null,"Player created");
         
-        //Creates Array and populates
-        enemies = new ArrayList<Enemy>();
-        enemies.add(new Enemy(20,2,2,2));
-        enemies.add(new Enemy(30,2,2,2));
+        entities.add(new Enemy(20,2,2,2));
+        entities.add(new Enemy(30,2,2,2));
         JOptionPane.showMessageDialog(null,"Enemy created");
         /* Create and display the form */
         initComponents();
@@ -66,7 +69,7 @@ private ArrayList<Enemy> enemies;
         tpLabel = new javax.swing.JLabel();
         tpFeild = new javax.swing.JTextField();
         mainMenu = new javax.swing.JLayeredPane();
-        BasicAttack = new javax.swing.JButton();
+        basicAttack = new javax.swing.JButton();
         specialAttack = new javax.swing.JButton();
         specialMenu = new javax.swing.JLayeredPane();
         bBlade = new javax.swing.JButton();
@@ -93,14 +96,14 @@ private ArrayList<Enemy> enemies;
         tpFeild.setEditable(false);
         tpFeild.setText("10");
 
-        BasicAttack.setText("Attack");
-        BasicAttack.addActionListener(new java.awt.event.ActionListener() {
+        basicAttack.setText("Attack");
+        basicAttack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BasicAttackActionPerformed(evt);
+                basicAttackActionPerformed(evt);
             }
         });
-        BasicAttack.setBounds(10, 10, 150, 23);
-        mainMenu.add(BasicAttack, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        basicAttack.setBounds(10, 10, 150, 23);
+        mainMenu.add(basicAttack, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         specialAttack.setText("Special Attack");
         specialAttack.addActionListener(new java.awt.event.ActionListener() {
@@ -142,9 +145,8 @@ private ArrayList<Enemy> enemies;
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                            .addComponent(jSeparator1)
                             .addContainerGap())
-                        .addComponent(name)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(tpLabel, javax.swing.GroupLayout.Alignment.LEADING, 0, 1, Short.MAX_VALUE)
@@ -155,20 +157,23 @@ private ArrayList<Enemy> enemies;
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(tpFeild, 0, 1, Short.MAX_VALUE)
                                 .addComponent(hpFeildPlayer))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 478, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(test, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(67, 67, 67))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(specialMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(276, 276, 276))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(556, 556, 556)
                             .addComponent(jLabel2)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(hpFeildEnemy, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
-                            .addContainerGap()))
+                            .addComponent(hpFeildEnemy, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                            .addContainerGap())
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(name)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(specialMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(276, 276, 276)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addContainerGap())))
@@ -198,7 +203,7 @@ private ArrayList<Enemy> enemies;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(specialMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                    .addComponent(mainMenu))
                 .addContainerGap())
         );
 
@@ -218,10 +223,10 @@ private ArrayList<Enemy> enemies;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-private void BasicAttackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BasicAttackActionPerformed
+private void basicAttackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basicAttackActionPerformed
     playerAttack(1);
     enemyAttack();
-}//GEN-LAST:event_BasicAttackActionPerformed
+}//GEN-LAST:event_basicAttackActionPerformed
 
 private void bBladeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBladeActionPerformed
 // TODO add your handling code here:
@@ -251,12 +256,13 @@ private void specialBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     }
     private void update()
     {
-        hpFeildPlayer.setText(String.valueOf(spartan101.getHp()));
-        tpFeild.setText(String.valueOf(spartan101.getTp()));
-        Enemy grunt1 = enemies.get(0);
-        hpFeildEnemy.setText(String.valueOf(grunt1.getHp()));
-        Enemy grunt2 = enemies.get(1);
-        test.setText(String.valueOf(grunt2.getHp()));
+        Base entity = entities.get(0);
+        hpFeildPlayer.setText(String.valueOf(entity.getHp()));
+        tpFeild.setText(String.valueOf(entity.getTp()));
+        Base grunt = entities.get(1);
+        hpFeildEnemy.setText(String.valueOf(grunt.getHp()));
+        grunt = entities.get(2);
+        test.setText(String.valueOf(grunt.getHp()));
         
     }
     private void playerAttack(int atknum)
@@ -347,8 +353,8 @@ private void specialBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BasicAttack;
     private javax.swing.JButton bBlade;
+    private javax.swing.JButton basicAttack;
     private javax.swing.JTextField hpFeildEnemy;
     private javax.swing.JTextField hpFeildPlayer;
     private javax.swing.JLabel hpLabel;
