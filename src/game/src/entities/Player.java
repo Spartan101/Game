@@ -37,7 +37,7 @@ public class Player extends Base {
 
         
     public Player(int HP,int TP,int logic,int techSavey,int programmingAbility,int senceOfDirection,
-                            int security,int agility,int major1,int major2)
+                            int security,int agility,int major1,int major2, String name)
     {
         this.HP = HP;
         this.TP = TP;
@@ -47,6 +47,7 @@ public class Player extends Base {
         this.senceOfDirection = senceOfDirection;
         this.security = security;
         this.agility = agility;
+        this.name = name;
         
 //        switch(major1)
 //        {

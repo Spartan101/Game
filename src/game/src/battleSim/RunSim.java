@@ -10,6 +10,8 @@ import game.src.entities.*;
 
 
 /**
+ * This simulates a combat instance.
+ * This stuff should probably be scripted
  *
  * @author Jason
  */
@@ -19,13 +21,13 @@ public class RunSim {
     {
     	//Creates Array and populates
         ArrayList<Base> entities = new ArrayList<Base>();
-        entities.add(new Player(10,12,10,4,9,5,9,5,1,2));
+        entities.add(new Player(10,12,10,4,9,5,9,5,1,2,"Player"));
         System.out.println("Player created");
         
-        entities.add(new Enemy(20,2,2,2));
+        entities.add(new Enemy(20,2,2,2,"Grunt 1"));
         System.out.println("Enemy 1 created");
         
-        entities.add(new Enemy(30,2,2,2));
+        entities.add(new Enemy(30,2,2,2,"Grunt 2"));
         System.out.println("Enemy 2 created");
         
         System.out.println("Starting Battle");

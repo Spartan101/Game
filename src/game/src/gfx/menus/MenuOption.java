@@ -1,5 +1,7 @@
 package game.src.gfx.menus;
 
+import game.src.battleSim.Battle;
+
 import javax.swing.JButton;
 
 
@@ -14,5 +16,4 @@ import javax.swing.JButton;
  *
  */
 public abstract class MenuOption extends JButton{
-	
 }

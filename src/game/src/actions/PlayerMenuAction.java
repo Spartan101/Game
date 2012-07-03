@@ -2,6 +2,7 @@ package game.src.actions;
 
 import java.awt.Container;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 import javax.swing.AbstractButton;
 import javax.swing.JButton;
@@ -31,25 +32,25 @@ public class PlayerMenuAction implements CombatAction {
 	
 	@Override
 	public void use() {
-		
-		// TODO Auto-generated method stub
-
+		//wait for some input
 	}
 
 	@Override
 	public String description() {
-		// TODO Auto-generated method stub
 		return "A Wild Menu Appears!";
 	}
 
 	@Override
 	public PlayerMenu menuPanel() {
-		return null;
+		//TODO: make this based on player abilities? Much Later
+		ArrayList<MenuOption> options = new ArrayList<MenuOption>();
+		options.add(new AttackOption());
+		PlayerMenu menu = new PlayerMenu(options);
+		return menu;
 	}
 
 	@Override
 	public JPanel GFXPanel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

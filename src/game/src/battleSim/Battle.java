@@ -35,6 +35,13 @@ public class Battle
 	public Battle(ArrayList<Base> entities) 
 	{
 		this.entities = entities;
+		
+		//give each entity a list of all entities in the game...
+		//maybe passing them the battle object would be better?
+		//maybe there's some correct way of doing this I'd know if I did Game Design.
+		for (Base base : entities) {
+			base.setEntities(entities);
+		}
 		currentEntity = 0;
 	}
 
@@ -59,7 +66,7 @@ public class Battle
 		//TODO: change action handling code to allow multiple actions per entity
 		
 		CombatAction action = entities.get(currentEntity).action(); //throws null pointer because no entities have actions yet.
-		//TODO: add action use code
+		action.use();
 		System.out.println(action.description());
 		
 		//TODO: change menu handling... this is bad

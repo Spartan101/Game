@@ -1,6 +1,7 @@
 package game.src.gfx.menus;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.swing.JLayeredPane;
 
@@ -20,5 +21,10 @@ public class PlayerMenu extends JLayeredPane{
 	 */
 	public PlayerMenu (ArrayList<MenuOption> options){
 		this.options = options;
+		for (MenuOption menuOption : options) {
+			add(menuOption);
+		}
 	};
+	
+	
 }

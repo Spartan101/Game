@@ -5,6 +5,7 @@
 package game.src.entities;
 import game.src.actions.CombatAction;
 
+import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.*;
 
@@ -17,18 +18,24 @@ import javax.swing.*;
  */
 public abstract class Base {
     
-    protected int HP;
+    protected int hp;
+    protected String name;
     protected int def;
     protected int agility;
     protected int weaponStr;
+    protected ArrayList<Base> entities;
     
-    public CombatAction action(){
+    public void setEntities(ArrayList<Base> entities) {
+		this.entities = entities;
+	}
+
+	public CombatAction action(){
     	return null;
     }
     
     public int getHp()
     {
-        return HP;
+        return hp;
     }
     
     public int attack()
@@ -45,16 +52,20 @@ public abstract class Base {
         if(chance>=95)
         {
             JOptionPane.showMessageDialog(null,"CRITICAL HIT!!");
-            HP -= dmg*3;
+            hp -= dmg*3;
         }
         else if(chance>= (agility*10))
         {
             //System.out.println(dmg/def);
-            HP -= (dmg/def);
+            hp -= (dmg/def);
         }
         else
         {
             System.out.println("Miss\n");
         }
     }
+
+	public String getName() {
+		return name;
+	}
 }

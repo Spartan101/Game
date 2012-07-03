@@ -1,6 +1,5 @@
 package game.src.actions;
 
-import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
 import game.src.entities.Base;
@@ -15,6 +14,9 @@ import game.src.gfx.menus.PlayerMenu;
 public class BasicAttackAction implements CombatAction {
 	
 	
+	private Base source;
+	private Base target;
+
 	/**
 	 * The constructor accepts the source and target entities for the attack
 	 * 
@@ -22,13 +24,14 @@ public class BasicAttackAction implements CombatAction {
 	 * @param target
 	 */
 	public BasicAttackAction (Base source, Base target) {
-		
+		this.source = source;
+		this.target = target;
 	}
 	
 	@Override
 	public void use() {
 		//TODO: rewrite attack event
-		System.out.println("Player Attacks!");
+		System.out.println(source.getName() + " Attacks " + target.getName() + "!");
 
 //		int i = Integer.parseInt(JOptionPane.showInputDialog("Which enemy?"));
 //		        

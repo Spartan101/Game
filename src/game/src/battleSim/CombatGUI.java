@@ -9,6 +9,7 @@ import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 
 import game.src.entities.*;
+import game.src.gfx.menus.PlayerMenu;
 
 import java.util.ArrayList;
 /**
@@ -231,9 +232,10 @@ public class CombatGUI extends javax.swing.JFrame {
         
     }
     
-    public void showMenu(JLayeredPane menu){
+    public void showMenu(PlayerMenu menu){
     	//TODO: player specific menus
-    	mainMenu.setVisible(true);
+    	
+    	
     }
     
 
