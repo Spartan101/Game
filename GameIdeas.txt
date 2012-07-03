@@ -1,0 +1,131 @@
+Storyline:
+Three nerds get sucked into uni cyberspace where virus has taken control.
+In order to escape they must defeat the evil virus and save the uni programs,
+all while completeing their uni degrees.
+Tall James as network hacker/helper to the traped heros.
+
+----------------------------
+
+Stats based on number out of 10
+
+stats:
+Logic				Multiplies Damage
+Tech Savey			Affects Defence
+Programing ability		Affects Programing damage
+Sence of Direction		Affects Miss chance
+Writen English ability		Affects tests
+Security			Affects Security damage. 0 = Security attacks not possible
+Agility				Affects Defence
+
+----------------------------
+
+Rob (A.K.A. Funkballs)
+
+Looks:
+Glasses
+Brown Jacket
+"No i will not fix your computer" shirt
+Brown pants
+
+Stats:
+Logic 			9/10
+Tech Savey		9/10
+Programing ability	9/10
+Sence of Direction	2/10
+Writen English ability	4/10
+Security		0/10
+Agility			4/10
+
+Special:
+Samuri Warrior ability:
+	Transforms into a sacred samuri warrior with revenge boiling deep down
+	in his black heart
+
+----------------------------
+
+Jason (A.K.A Spartan101)
+
+Looks:
+Black Jumper
+Dimond Armor Shirt
+Blue Jeans
+
+Stats:
+Logic 		       10/10
+Tech Savey		4/10
+Programing ability	9/10
+Sence of Direction	8/10
+Writen English ability	2/10
+Security		8/10
+Agility			4/10
+
+Special:
+Spartan Ability:
+	Transforms into a savage spartan. Better not get in his way 
+	casue "THIS IS SPARTA!"
+Dimond armor
+	Significantly raises defence
+
+----------------------------
+
+Simon (A.K.A Rith)
+
+Looks:
+Red Liverpool jacket
+Black pants
+
+Stats:
+Logic 		       	5/10
+Tech Savey		8/10
+Programing ability	5/10
+Sence of Direction	5/10
+Writen English ability	5/10
+Security		8/10
+Agility			8/10
+
+Special:
+Soccor Fanatic Ability
+
+----------------------------
+
+Possible Attacks:
+Single attack:
+	Programing:
+		Reprogram
+		Binary Blade
+
+	Security:
+		Logic Bomb:
+			Throws a bomb. Damages nearby enemies
+		Root Kit (Stuns)
+
+	Personal:
+		Rob:
+			Tutor: Temp Raises Damage dealt
+		Jason:
+			Dimond armor: Significantly raises defence
+		Simon:
+			Soccer Cheer: Heals Allys
+Dual Attack:
+	Programing:
+		Pair Programing
+
+	Security:
+		Back Door
+
+	Ultra Dual Attacks:
+		Rob and Jason: Blades of Fury
+			
+----------------------------
+Action Sequence for Attacks:
+Pair Programing:
+	Initiator starts typing on a computer while helper runs accross screen
+	Button action to throw a USB accross the screen.
+	Helper slides under enemy (button action to catch USB) and plugs in USB.
+Back Door:
+	Helper Distracts enemy while Initiator sneaks behind the enemy and plugs in 
+	wireless card into back.
+	(multiplys damage for a couple of turns)
+Blades of Fury:
+	A spinning cyclone attack. (Button Mash to charge spin) 
+	Attacks all enemies for average damage or one enemy for high damage.
