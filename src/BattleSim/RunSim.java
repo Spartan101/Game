@@ -12,7 +12,9 @@ public class RunSim {
     
     public static void main(String args[])
     {
+    	//test Message
         //Simulator sim = new Simulator();
-        SimV2 sim = new SimV2();
+        //SimV2 sim = new SimV2();
+        SimV3 sim = new SimV3();
     }
 }
