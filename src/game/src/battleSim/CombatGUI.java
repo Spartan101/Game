@@ -1,53 +1,41 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * Simulatino.java
+ * CombatGUI.java
  * 
- * While this file contains alot of creationg code, this will be eventually pased into it
+ * 
  * Created on 03/11/2011, 7:03:14 PM
  */
-package BattleSim;
-import Entities.*;
+package game.src.battleSim;
+import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
+
+import game.src.entities.*;
+
 import java.util.ArrayList;
 /**
- *
- * @author Jason
+ * This Class handles the GUI and extends JFrame
+ * 
+ * it is very broken and full of legacy code and auto generated crap
+ * 
+ * TODO: completely rewrite it
+ * 
+ * @author Jason and Funkballs
  */
-public class SimV3 extends javax.swing.JFrame {
+public class CombatGUI extends javax.swing.JFrame {
 //private Player spartan101;
 //private ArrayList<Enemy> enemies;
-  private ArrayList<Base> entities;
-
+ // private ArrayList<Base> entities;
+  private Battle battle;
     /** Creates new form RunSim */
-    public SimV3() {
-        //spartan101 = new Player(10,12,10,4,9,5,9,5,1,2);
-
-        //Creates Array and populates
-        entities = new ArrayList<Base>();
-        entities.add(new Player(10,12,10,4,9,5,9,5,1,2));
-        JOptionPane.showMessageDialog(null,"Player created");
-        
-        entities.add(new Enemy(20,2,2,2));
-        entities.add(new Enemy(30,2,2,2));
-        JOptionPane.showMessageDialog(null,"Enemy created");
+    public CombatGUI(Battle battle) {
+    	this.battle = battle;
+    	
         /* Create and display the form */
         initComponents();
         setup();
-        update();
-        
+        update();    
         setVisible(true);
-        JOptionPane.showMessageDialog(null,"Battle Start");
-        mainMenu.setVisible(true);
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//
-//            public void run() {
-//                new Simulator().setVisible(true);
-//            }
-//        });
+        System.out.println("Battle Start");      
+        //mainMenu.setVisible(true);
     }
 
     /** This method is called from within the constructor to
@@ -96,41 +84,9 @@ public class SimV3 extends javax.swing.JFrame {
         tpFeild.setEditable(false);
         tpFeild.setText("10");
 
-        basicAttack.setText("Attack");
-        basicAttack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                basicAttackActionPerformed(evt);
-            }
-        });
-        basicAttack.setBounds(10, 10, 150, 23);
-        mainMenu.add(basicAttack, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
 
-        specialAttack.setText("Special Attack");
-        specialAttack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                specialAttackActionPerformed(evt);
-            }
-        });
-        specialAttack.setBounds(10, 40, 150, 23);
-        mainMenu.add(specialAttack, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        bBlade.setText("Binary Blade");
-        bBlade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bBladeActionPerformed(evt);
-            }
-        });
-        bBlade.setBounds(10, 10, 140, 23);
-        specialMenu.add(bBlade, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        specialBack.setText("Back");
-        specialBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                specialBackActionPerformed(evt);
-            }
-        });
-        specialBack.setBounds(10, 40, 140, 23);
-        specialMenu.add(specialBack, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLabel2.setText("HP:");
 
@@ -222,29 +178,36 @@ public class SimV3 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-private void basicAttackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basicAttackActionPerformed
-    playerAttack(1);
-    enemyAttack();
-}//GEN-LAST:event_basicAttackActionPerformed
-
-private void bBladeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBladeActionPerformed
-// TODO add your handling code here:
-    specialMenu.setVisible(false);
-    mainMenu.setVisible(true);
-    playerAttack(3);
-    enemyAttack();
-}//GEN-LAST:event_bBladeActionPerformed
-
-private void specialAttackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_specialAttackActionPerformed
-    mainMenu.setVisible(false);
-    specialMenu.setVisible(true);
-}//GEN-LAST:event_specialAttackActionPerformed
-
-private void specialBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_specialBackActionPerformed
-    specialMenu.setVisible(false);
-    mainMenu.setVisible(true);
-}//GEN-LAST:event_specialBackActionPerformed
+//
+//private void basicAttackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basicAttackActionPerformed
+//  
+//	//TODO: change attack handling
+//	int i = Integer.parseInt(JOptionPane.showInputDialog("Which enemy?"));  
+//	JOptionPane.showMessageDialog(null,"attacking now");
+//	battle.attack(0,i);
+//    //enemyAttack();
+//}//GEN-LAST:event_basicAttackActionPerformed
+//
+//private void bBladeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBladeActionPerformed
+//    specialMenu.setVisible(false);
+//    mainMenu.setVisible(true);
+//    
+//    //TODO: change special move handling
+//    int i = Integer.parseInt(JOptionPane.showInputDialog("Which enemy?"));  
+//	JOptionPane.showMessageDialog(null,"attacking now");
+//	battle.attack(0,i);
+//    battle.attack(0,i);
+//}//GEN-LAST:event_bBladeActionPerformed
+//
+//private void specialAttackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_specialAttackActionPerformed
+//    mainMenu.setVisible(false);
+//    specialMenu.setVisible(true);
+//}//GEN-LAST:event_specialAttackActionPerformed
+//
+//private void specialBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_specialBackActionPerformed
+//    specialMenu.setVisible(false);
+//    mainMenu.setVisible(true);
+//}//GEN-LAST:event_specialBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,102 +219,24 @@ private void specialBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     }
     private void update()
     {
-        Base entity = entities.get(0);
-        hpFeildPlayer.setText(String.valueOf(entity.getHp()));
-        tpFeild.setText(String.valueOf(entity.getTp()));
-        Base grunt = entities.get(1);
-        hpFeildEnemy.setText(String.valueOf(grunt.getHp()));
-        grunt = entities.get(2);
-        test.setText(String.valueOf(grunt.getHp()));
+    	//TODO: for loop through entities and place stats for each one in GUI
+    	
+        //Base entity = entities.get(0);
+      //  hpFeildPlayer.setText(String.valueOf(entity.getHp()));
+        //tpFeild.setText(String.valueOf(entity.getTp()));
+       // Base grunt = entities.get(1);
+      //  hpFeildEnemy.setText(String.valueOf(grunt.getHp()));
+      //  grunt = entities.get(2);
+      //  test.setText(String.valueOf(grunt.getHp()));
         
     }
-    private void playerAttack(int atknum)
-    {
-        int i = Integer.parseInt(JOptionPane.showInputDialog("Which enemy?"));
-        
-        Enemy grunt = enemies.get(i);
-        JOptionPane.showMessageDialog(null,"attacking now");
-        int dmg=0;
-        dmg=spartan101.attack(atknum);
-        JOptionPane.showMessageDialog(null,"attack code successful\nAttacking with " + dmg + " damage");
     
-        JOptionPane.showMessageDialog(null,"Grunt HP before attack\n" + grunt.getHp());
-        grunt.takeDamage(dmg);
-        JOptionPane.showMessageDialog(null,"Grunt HP after attack\n" + grunt.getHp());
-        update();
-        JOptionPane.showMessageDialog(null,"damaged code successful");
-        hpCheck(grunt);
+    public void showMenu(JLayeredPane menu){
+    	//TODO: player specific menus
+    	mainMenu.setVisible(true);
     }
-    private void enemyAttack()
-    {
-        for(int i=0;i<enemies.size();i++)
-        {
-            JOptionPane.showMessageDialog(null,"enemy attacking");
-            int dmg=0;
-           // dmg = enemies[i].
-            Enemy grunt = enemies.get(i);
-            dmg = grunt.attack();
-            JOptionPane.showMessageDialog(null,"attack code successful\nAttacking with " + dmg + " damage");
-        
-            JOptionPane.showMessageDialog(null,"Player HP before attack\n" + spartan101.getHp());
-            spartan101.takeDamage(dmg);
-            JOptionPane.showMessageDialog(null,"Player HP after attack\n" + spartan101.getHp());
-            update();
-            JOptionPane.showMessageDialog(null,"damaged code successful");
-            hpCheck(spartan101);
-        }
-    }
-    private void hpCheck(Base entity)
-    {
-        if(entity.getHp()<=0)
-        {
-            //Take out of combat
-            if(entity==spartan101)
-            {
-                JOptionPane.showMessageDialog(null,"Defeat");
-               System.exit(0);
-            }
-//            else if (entity==enemies.get(0))
-//            {
-//                JOptionPane.showMessageDialog(null,"Victory");
-//                System.exit(0);
-//            }
-//            else if (entity==enemies.get(1))
-//            {
-//                JOptionPane.showMessageDialog(null,"Victory");
-//                System.exit(0);
-//            }
-            else
-            {
-                for(int i=0;i<enemies.size();i++)
-                {
-                    Enemy grunt = enemies.get(i);
-                    if(entity==grunt)
-                    {
-                        if(enemies.size()<=1)
-                        {
-                            JOptionPane.showMessageDialog(null,"Enemy Killed");
-                            JOptionPane.showMessageDialog(null,"Victory!!!");
-                            System.exit(0);
-                        }
-                        else
-                        {
-                            JOptionPane.showMessageDialog(null,"Enemy Killed");
-                            JOptionPane.showMessageDialog(null,enemies.size());
-                            enemies.remove(i);
-                            JOptionPane.showMessageDialog(null,enemies.size());
-                        }
-                    }
-                }
-                
-                
-                
-                
-//                JOptionPane.showMessageDialog(null,"Error");
-//                System.exit(1);
-            }
-        }
-    }
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bBlade;
     private javax.swing.JButton basicAttack;

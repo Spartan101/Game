@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entities;
+package game.src.entities;
 import java.util.Random;
 /**
- *
+ * This entity is a generic enemy
  * @author Jason
  */
 public class Enemy extends Base{

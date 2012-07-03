@@ -2,11 +2,17 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entities;
+package game.src.entities;
+import game.src.actions.CombatAction;
+import game.src.actions.PlayerMenuAction;
+
 import java.util.Random;
 import javax.swing.JOptionPane;
+
 /**
- *
+ * This entity represents the player
+ * TODO: Javadoc this stuff and move actions to their own classes
+ * 
  * @author Jason
  */
 public class Player extends Base {
@@ -102,7 +108,16 @@ public class Player extends Base {
         return weaponStr;
     }
     
-    /**
+    
+    
+    
+    @Override
+	public CombatAction action() {
+		return new PlayerMenuAction(this);
+	}
+    
+    
+	/**
      * @param dmg 
      * Randomizes to hit chance
      * If >= 95 Critical hit

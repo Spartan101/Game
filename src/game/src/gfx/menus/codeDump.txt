@@ -1,0 +1,65 @@
+
+/**
+ * this is a temporary place to dump the code for the menu options culled out of CombatGui
+ * it's not a functional class and just a pastebin....
+ * @author Funkballs
+ *
+ */
+public class CodeDump {
+	
+	
+	JLayeredPane mainMenu = new JLayeredPane();
+	JButton basicAttack = new JButton();
+	JButton specialAttack = new JButton();
+	basicAttack.setText("Attack");
+    basicAttack.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            basicAttackActionPerformed(evt);
+        }
+
+    });
+    basicAttack.setBounds(10, 10, 150, 23);
+    mainMenu.add(basicAttack, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+    specialAttack.setText("Special Attack");
+    specialAttack.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            specialAttackActionPerformed(evt);
+        }
+    });
+    specialAttack.setBounds(10, 40, 150, 23);
+    mainMenu.add(specialAttack, javax.swing.JLayeredPane.DEFAULT_LAYER);
+    
+    //JButton bBlade = new JButton;
+    bBlade.setText("Binary Blade");
+    bBlade.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            bBladeActionPerformed(evt);
+        }
+    });
+    bBlade.setBounds(10, 10, 140, 23);
+    JLayeredPane specialMenu;
+	specialMenu.add(bBlade, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+    JButton specialBack;
+	specialBack.setText("Back");
+    specialBack.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            specialBackActionPerformed(evt);
+        }
+    });
+    specialBack.setBounds(10, 40, 140, 23);
+    specialMenu.add(specialBack, javax.swing.JLayeredPane.DEFAULT_LAYER);
+	return null;
+}
+
+private void basicAttackActionPerformed(ActionEvent evt) {
+				// TODO Auto-generated method stub
+				
+}
+
+private void specialAttackActionPerformed(ActionEvent evt) {
+	// TODO Auto-generated method stub
+	
+}
+}
